@@ -14,44 +14,35 @@ const MedicalCenterCard = ({ center }) => {
 
   return (
     <div className="medical-center-card">
-      <div className="center-logo">
-        <img src={center.logo || defaultLogo} alt={`${center["Hospital Name"]} logo`} />
-      </div>
-
-      <div className="center-details">
-        <h3 className="center-name">{center["Hospital Name"]}</h3>
-        <div className="center-location">
-          <span className="location-icon">📍</span>
-          <span className="location-text">{center["Address"]}, {center["City"]}, {center["State"]} {center["ZIP Code"]}</span>
-        </div>
-        <div className="center-specialties">
-          <span className="specialty-label">Type:</span>
-          <span className="specialty-text">{center["Hospital Type"] || 'General Hospital'}</span>
-        </div>
-        <div className="center-timing">
-          <span className="timing-icon">🕒</span>
-          <span className="timing-text">Open 24 hours</span>
-        </div>
-      </div>
-
-      <div className="center-actions">
-        <div className="center-rating">
-          <span className={`rating-badge ${parseInt(center["Hospital overall rating"]) >= 4 ? 'high' : 'medium'}`}>
-            {center["Hospital overall rating"] || 'N/A'}
-          </span>
+      <div className="card-header">
+        <div className="center-logo">
+          <img src={center.logo || defaultLogo} alt={`${center["Hospital Name"]} logo`} />
         </div>
 
-        <button
-          className="book-appointment-btn"
-          onClick={toggleBooking}
-          id={`book-btn-${center["Provider ID"]}`}
-        >
-          Book FREE Center Visit
-        </button>
+        <div className="center-details">
+          <h3 className="center-name">{center["Hospital Name"]}</h3>
+          <div className="center-location">
+            <span className="location-text">{center["City"]}, {center["State"]}</span>
+          </div>
+          <div className="center-specialties">
+            <span className="specialty-text">Excellence Center for Advanced Dentistry + 1 more</span>
+          </div>
+          <div className="center-consultation">
+            <span className="free-tag">FREE</span>
+            <span className="consultation-text">Book Consultation fee at clinic</span>
+          </div>
+        </div>
 
-        <button className="view-profile-btn">
-          View Profile
-        </button>
+        <div className="center-availability">
+          <span className="availability-tag">Available Today</span>
+          <button
+            className="book-appointment-btn"
+            onClick={toggleBooking}
+            id={`book-btn-${center["Provider ID"]}`}
+          >
+            Book FREE Center Visit
+          </button>
+        </div>
       </div>
 
       {showBooking && (

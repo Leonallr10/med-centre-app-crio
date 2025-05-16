@@ -3,6 +3,10 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-header {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -33,32 +37,40 @@
 
 .center-name {
   color: #1976d2;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .center-location,
 .center-specialties,
-.center-timing {
-  display: flex;
-  align-items: center;
+.center-consultation {
   margin-bottom: 6px;
   color: #666;
   font-size: 14px;
 }
 
-.location-icon,
-.timing-icon {
+.center-specialties {
+  font-size: 13px;
+  color: #555;
+}
+
+.free-tag {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
   margin-right: 8px;
-  font-size: 16px;
 }
 
-.specialty-label {
-  font-weight: 500;
-  margin-right: 5px;
+.consultation-text {
+  font-size: 13px;
 }
 
-.center-actions {
+.center-availability {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -66,30 +78,14 @@
   min-width: 150px;
 }
 
-.center-rating {
-  margin-bottom: 5px;
-}
-
-.rating-badge {
+.availability-tag {
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-weight: 500;
+  color: #4caf50;
   font-size: 14px;
+  font-weight: 500;
 }
 
-.rating-badge.high {
-  background-color: #e6f7e6;
-  color: #28a745;
-}
-
-.rating-badge.medium {
-  background-color: #fff3cd;
-  color: #ffc107;
-}
-
-.book-appointment-btn,
-.view-profile-btn {
+.book-appointment-btn {
   width: 100%;
   padding: 8px 16px;
   border-radius: 4px;
@@ -98,9 +94,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-}
-
-.book-appointment-btn {
   background-color: #1976d2;
   color: white;
   border: none;
@@ -110,23 +103,35 @@
   background-color: #1565c0;
 }
 
-.view-profile-btn {
-  background-color: transparent;
-  color: #1976d2;
-  border: 1px solid #1976d2;
+.rating-badge {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 10px;
 }
 
-.view-profile-btn:hover {
-  background-color: #f0f7ff;
+.rating-badge.high {
+  background-color: #4caf50;
+  color: white;
+}
+
+.rating-badge.medium {
+  background-color: #ffc107;
+  color: white;
 }
 
 @media (max-width: 768px) {
-  .medical-center-card {
+  .card-header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .center-actions {
+  .center-availability {
     width: 100%;
     align-items: stretch;
     margin-top: 15px;

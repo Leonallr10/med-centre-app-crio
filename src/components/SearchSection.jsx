@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getStates, getCities } from '../services/api';
+import { FaSearch } from 'react-icons/fa';
+import { FaHospital, FaUserMd, FaAmbulance } from 'react-icons/fa';
+import { GiMicroscope, GiMedicines } from 'react-icons/gi';
 import '../styles/SearchSection.css';
 
 const SearchSection = () => {
@@ -16,11 +19,11 @@ const SearchSection = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { name: 'Doctors', icon: '👨‍⚕️' },
-    { name: 'Labs', icon: '🔬' },
-    { name: 'Hospitals', icon: '🏥' },
-    { name: 'Medical Store', icon: '💊' },
-    { name: 'Ambulance', icon: '🚑' },
+    { name: 'Doctors', icon: <FaUserMd /> },
+    { name: 'Labs', icon: <GiMicroscope /> },
+    { name: 'Hospitals', icon: <FaHospital /> },
+    { name: 'Medical Store', icon: <GiMedicines /> },
+    { name: 'Ambulance', icon: <FaAmbulance /> },
   ];
 
   // Fetch states on component mount
@@ -88,84 +91,90 @@ const SearchSection = () => {
     <div className="search-section">
       <div className="hero-content">
         <div className="hero-text">
-          <h2>Skip the travel! Find Online</h2>
-          <h1>Medical <span>Centers</span></h1>
+          <h1>Skip the travel! Find Online</h1>
+          <h2>Medical Centers</h2>
           <p>Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.</p>
           <button className="find-centers-btn">Find Centers</button>
         </div>
         <div className="hero-image">
-          <img src="https://img.freepik.com/free-photo/team-young-specialist-doctors-standing-corridor-hospital_1303-21199.jpg" alt="Medical Professionals" />
+          {/* Hero image is added via CSS in SearchSection.css */}
         </div>
       </div>
 
       <div className="search-container">
-        <form onSubmit={handleSearch} className="search-form">
-          <div className="search-inputs">
-            <div id="state" className="search-input">
-              <span className="search-icon">🔍</span>
-              <div
-                className="input-field"
-                onClick={() => setStateDropdownOpen(!stateDropdownOpen)}
-              >
-                {selectedState || 'State'}
+        <div className="search-form-wrapper">
+          <form onSubmit={handleSearch} className="search-form">
+            <div className="search-inputs">
+              <div id="state" className="search-input">
+                <FaSearch className="search-icon" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="State"
+                  value={selectedState}
+                  onClick={() => setStateDropdownOpen(!stateDropdownOpen)}
+                  readOnly
+                />
+                {stateDropdownOpen && (
+                  <ul className="dropdown-list">
+                    {states.map((state, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleStateSelect(state)}
+                      >
+                        {state}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              {stateDropdownOpen && (
-                <ul className="dropdown-list">
-                  {states.map((state, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleStateSelect(state)}
-                    >
-                      {state}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
 
-            <div id="city" className="search-input">
-              <span className="search-icon">🔍</span>
-              <div
-                className="input-field"
-                onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-              >
-                {selectedCity || 'City'}
+              <div id="city" className="search-input">
+                <FaSearch className="search-icon" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="City"
+                  value={selectedCity}
+                  onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
+                  readOnly
+                />
+                {cityDropdownOpen && (
+                  <ul className="dropdown-list">
+                    {cities.map((city, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleCitySelect(city)}
+                      >
+                        {city}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              {cityDropdownOpen && (
-                <ul className="dropdown-list">
-                  {cities.map((city, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleCitySelect(city)}
-                    >
-                      {city}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
 
-            <button
-              type="submit"
-              id="searchBtn"
-              className="search-button"
-              disabled={!selectedState || !selectedCity}
-            >
-              Search
-            </button>
-          </div>
-        </form>
+              <button
+                type="submit"
+                id="searchBtn"
+                className="search-button"
+                disabled={!selectedState || !selectedCity}
+              >
+                <FaSearch style={{ marginRight: '5px' }} /> Search
+              </button>
+            </div>
+          </form>
+        </div>
 
         <div className="category-section">
           <p className="category-title">You may be looking for</p>
-          <div className="categories">
+          <div className="categories-wrapper">
             {categories.map((category, index) => (
               <div
                 key={index}
-                className={`category ${activeCategory === category.name ? 'active' : ''}`}
+                className={`category-card ${activeCategory === category.name ? 'active' : ''}`}
                 onClick={() => setActiveCategory(category.name)}
               >
-                <span className="category-icon">{category.icon}</span>
+                <div className="category-icon">{category.icon}</div>
                 <span className="category-name">{category.name}</span>
               </div>
             ))}

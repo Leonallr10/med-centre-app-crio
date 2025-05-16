@@ -1,19 +1,11 @@
-.top-banner {
-  background-color: #0ea5e9;
-  color: white;
-  text-align: center;
-  padding: 10px 20px;
-  font-size: 14px;
-}
-
 .navbar {
-  background-color: #f0f7ff;
+  background-color: #f0f9ff;
   height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 40px;
+  top: 0;
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -28,7 +20,7 @@
 }
 
 .navbar-logo {
-  color: #1e3a8a;
+  color: #0ea5e9;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -39,6 +31,8 @@
 .logo-icon {
   margin-right: 5px;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu {
@@ -70,7 +64,9 @@
   background-color: #0ea5e9;
   color: white !important;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .my-bookings-btn:hover {
