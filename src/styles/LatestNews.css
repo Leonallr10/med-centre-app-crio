@@ -1,0 +1,136 @@
+.latest-news-section {
+  padding: 80px 20px;
+  background-color: #f8fafc;
+}
+
+.latest-news-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0f2fe;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.tag-icon {
+  margin-right: 8px;
+  color: #0ea5e9;
+}
+
+.tag-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0ea5e9;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.news-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.news-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+  position: relative;
+}
+
+.news-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.news-date {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: white;
+  color: #64748b;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.news-content {
+  padding: 20px;
+}
+
+.news-category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category-icon {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.category-text {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.news-title {
+  color: #1e3a8a;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #0ea5e9;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .news-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-cards-container {
+    grid-template-columns: 1fr;
+  }
+}

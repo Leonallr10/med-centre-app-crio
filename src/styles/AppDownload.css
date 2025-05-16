@@ -1,0 +1,113 @@
+.app-download-section {
+  padding: 80px 20px;
+  background-color: #f0f7ff;
+}
+
+.app-download-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.app-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.app-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.app-content {
+  flex: 1;
+}
+
+.app-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.app-title .highlight {
+  color: #0ea5e9;
+}
+
+.app-description {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.app-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.app-feature {
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #e0f2fe;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: #0ea5e9;
+  font-size: 14px;
+}
+
+.feature-text {
+  color: #334155;
+  font-size: 16px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.app-button {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.app-button:hover {
+  transform: translateY(-3px);
+}
+
+.app-button img {
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 992px) {
+  .app-download-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .app-features {
+    justify-content: center;
+  }
+  
+  .app-feature {
+    justify-content: center;
+  }
+  
+  .app-buttons {
+    justify-content: center;
+  }
+}

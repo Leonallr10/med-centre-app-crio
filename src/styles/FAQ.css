@@ -1,0 +1,141 @@
+.faq-section {
+  padding: 80px 20px;
+  background-color: white;
+}
+
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0f2fe;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.tag-icon {
+  margin-right: 8px;
+  color: #0ea5e9;
+}
+
+.tag-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0ea5e9;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.faq-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.faq-image {
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.faq-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.faq-image-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tag-emoji {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.accordion {
+  flex: 1;
+}
+
+.accordion-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.accordion-item.active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-item.active .accordion-header {
+  background-color: #f8fafc;
+}
+
+.accordion-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 0 20px 20px;
+  background-color: #f8fafc;
+}
+
+.accordion-content p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .faq-content {
+    flex-direction: column;
+  }
+  
+  .faq-image {
+    margin-bottom: 30px;
+  }
+}

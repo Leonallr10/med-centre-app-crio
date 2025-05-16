@@ -1,0 +1,139 @@
+.doctor-carousel-container {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.doctor-carousel-title {
+  color: #1e3a8a;
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.doctor-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.doctor-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.doctor-card {
+  width: 250px;
+  text-align: center;
+}
+
+.doctor-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  background-color: #f0f7ff;
+}
+
+.doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-name {
+  color: #1e3a8a;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.doctor-specialty {
+  color: #0ea5e9;
+  font-size: 14px;
+}
+
+.carousel-arrow {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #64748b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.carousel-arrow:hover {
+  background-color: #f8fafc;
+}
+
+.carousel-arrow.prev {
+  margin-right: 10px;
+}
+
+.carousel-arrow.next {
+  margin-left: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #0ea5e9;
+}
+
+@media (max-width: 992px) {
+  .doctor-cards {
+    gap: 10px;
+  }
+  
+  .doctor-card {
+    width: 220px;
+  }
+  
+  .doctor-image-container {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .doctor-cards {
+    grid-template-columns: 1fr;
+  }
+}
