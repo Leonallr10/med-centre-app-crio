@@ -150,11 +150,11 @@ const BookingCalendar = ({ center, onClose }) => {
                     className={`date-tab ${selectedDate === dateObj.date ? 'selected' : ''}`}
                     onClick={() => handleDateSelect(dateObj.date)}
                   >
-                    <div className="date-label">
+                    <p className="date-label">
                       {isToday(dateObj.date) ? 'Today' :
                         dateObj.date === availableDates[1]?.date ? 'Tomorrow' :
                         formatDate(dateObj.date)}
-                    </div>
+                    </p>
                     <div className="slots-available">
                       {dateObj.available} Slots Available
                     </div>
@@ -170,7 +170,7 @@ const BookingCalendar = ({ center, onClose }) => {
 
           <div className="time-sections-container">
             <div className="time-section">
-              <div className="time-section-header">Morning</div>
+              <p className="time-section-header">Morning</p>
               <div className="time-slots">
                 {morningSlots.map((time) => {
                   const booked = isSlotBooked(selectedDate, time);
@@ -189,7 +189,7 @@ const BookingCalendar = ({ center, onClose }) => {
             </div>
 
             <div className="time-section">
-              <div className="time-section-header">Afternoon</div>
+              <p className="time-section-header">Afternoon</p>
               <div className="time-slots">
                 {afternoonSlots.map((time) => {
                   const booked = isSlotBooked(selectedDate, time);
@@ -208,7 +208,7 @@ const BookingCalendar = ({ center, onClose }) => {
             </div>
 
             <div className="time-section">
-              <div className="time-section-header">Evening</div>
+              <p className="time-section-header">Evening</p>
               <div className="time-slots">
                 {eveningSlots.map((time) => {
                   const booked = isSlotBooked(selectedDate, time);
