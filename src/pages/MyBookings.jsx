@@ -50,7 +50,7 @@ const MyBookings = () => {
   return (
     <div className="my-bookings-container">
       <div className="my-bookings-header">
-        <h1>My Bookings</h1>
+        <h1 data-testid="my-bookings-title">My Bookings</h1>
         <div className="search-container">
           <input
             type="text"
@@ -78,7 +78,7 @@ const MyBookings = () => {
                   <img src="https://cdn-icons-png.flaticon.com/512/4320/4320371.png" alt={`${booking["Hospital Name"]} logo`} />
                 </div>
                 <div className="booking-info">
-                  <h3>{booking["Hospital Name"]}</h3>
+                  <h3 className="column-title">{booking["Hospital Name"]}</h3>
                   <p className="booking-location">
                     {booking["City"]}, {booking["State"]}
                   </p>

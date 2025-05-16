@@ -102,7 +102,7 @@
   object-fit: contain;
 }
 
-.booking-info h3 {
+.booking-info h3, .booking-info .column-title {
   color: #1976d2;
   margin: 0 0 5px 0;
   text-transform: capitalize;
